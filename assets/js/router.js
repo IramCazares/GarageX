@@ -1,8 +1,9 @@
 const routes = {
-  '/': 'login.html',
-  '/login': 'login.html',
-  '/register': 'register.html',
-  '/dashboard': 'dashboard.html'
+  '/': 'routes/login.html',
+  '/login': 'routes/login.html',
+  '/register': 'routes/register.html',
+  '/dashboard': 'routes/dashboard.html',
+  '/users': 'routes/users.html'
 };
 
 const defaultRoute = 'notfound.html';
@@ -17,12 +18,20 @@ async function loadCommonParts() {
 
   document.getElementById('header').innerHTML = header;
   document.getElementById('footer').innerHTML = footer;
+
+  setupHeader();
+
 }
 
 async function router() {
+
   const path = location.hash.slice(1) || '/';
 
   if (!protectRoute(path)) return;
+  if (path === '/users' && !protectRouteByRole('admin')) {
+    return;
+  }
+
 
   const routeFile = routes[path] || defaultRoute;
 
@@ -35,13 +44,13 @@ async function router() {
     document.getElementById('footer').innerHTML = '';
   }
 
-  const res = await fetch(routeFile); 
+  const res = await fetch(routeFile);
   const html = await res.text();
   document.getElementById('app').innerHTML = html;
 
   setTimeout(() => {
     if (path === '/' || path === '/login') {
-      handleLoginForm(); 
+      handleLoginForm();
     }
     if (path === '/register') {
       handleRegisterForm();

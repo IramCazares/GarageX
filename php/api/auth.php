@@ -83,6 +83,8 @@ try {
             echo json_encode([
                 'success' => true,
                 'message' => 'Inicio de sesión exitoso',
+                'username' => $usuario['username'],
+                'rol' => $usuario['rol'],
                 'redirect' => './dashboard.html' // Ajusta esta ruta
             ]);
             break;

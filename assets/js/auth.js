@@ -24,7 +24,7 @@ function handleLoginForm() {
             const data = await response.json();
 
             if (data.success) {
-                loginUser(data.user);
+                loginUser(data);
                 window.location.hash = '/dashboard';
             } else {
                 document.getElementById('mensajeError').textContent = data.message;
