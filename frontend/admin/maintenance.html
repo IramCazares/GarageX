@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarageX - Mantenimientos</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (igual que en admin/dashboard.html) -->
+        <aside class="sidebar">
+            <!-- ... mismo contenido que admin/dashboard.html ... -->
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Todos los Mantenimientos</h1>
+                </div>
+                
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../../assets/images/admin-avatar.jpg" alt="Admin Avatar" class="avatar">
+                        <span class="user-name">Admin</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content">
+                <!-- Filtros -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Filtrar Mantenimientos</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="filterUser">Usuario</label>
+                                <select id="filterUser" class="form-control">
+                                    <option value="">Todos los usuarios</option>
+                                    <!-- Las opciones se cargarán con JavaScript -->
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="filterCar">Auto</label>
+                                <select id="filterCar" class="form-control">
+                                    <option value="">Todos los autos</option>
+                                    <!-- Las opciones se cargarán con JavaScript -->
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="filterType">Tipo</label>
+                                <select id="filterType" class="form-control">
+                                    <option value="">Todos los tipos</option>
+                                    <option value="cambio_aceite">Cambio de aceite</option>
+                                    <option value="rotacion_llantas">Rotación de llantas</option>
+                                    <option value="afinacion">Afinación general</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="filterStartDate">Fecha de Inicio</label>
+                                <input type="date" id="filterStartDate" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="filterEndDate">Fecha de Fin</label>
+                                <input type="date" id="filterEndDate" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button id="applyFiltersBtn" class="btn btn-primary">
+                                <i class="fas fa-filter"></i> Aplicar Filtros
+                            </button>
+                            <button id="resetFiltersBtn" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Limpiar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tabla de mantenimientos -->
+                <div class="table-container">
+                    <table class="table" id="maintenanceTable">
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Auto</th>
+                                <th>Tipo</th>
+                                <th>Fecha</th>
+                                <th>Kilómetros</th>
+                                <th>Costo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los datos se cargarán dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/admin/maintenance.js"></script>
+</body>
+</html>

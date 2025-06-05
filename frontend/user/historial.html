@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarageX - Historial</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Librería para generar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (igual que en dashboard.html) -->
+        <aside class="sidebar">
+            <!-- ... mismo contenido que dashboard.html ... -->
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Historial de Mantenimientos</h1>
+                </div>
+                
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../../assets/images/user-avatar.jpg" alt="User Avatar" class="avatar">
+                        <span class="user-name">Juan Pérez</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content">
+                <!-- Selección de auto -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Seleccionar Auto</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="carSelect">Auto</label>
+                            <select id="carSelect" class="form-control">
+                                <option value="">Selecciona un auto</option>
+                                <!-- Las opciones se cargarán con JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Botón para exportar PDF -->
+                <div class="pdf-export">
+                    <button id="exportPdfBtn" class="pdf-btn" disabled>
+                        <i class="fas fa-file-pdf"></i> Exportar a PDF
+                    </button>
+                </div>
+                
+                <!-- Contenedor para el reporte -->
+                <div id="reportContainer" class="table-container" style="display: none;">
+                    <div id="reportContent">
+                        <div class="report-header">
+                            <img src="../../assets/images/logo.png" alt="GarageX Logo" class="logo">
+                            <h2>Historial de Mantenimientos</h2>
+                            <p id="reportCarInfo"></p>
+                            <p id="reportDate"></p>
+                        </div>
+                        
+                        <table class="table" id="historyTable">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Tipo</th>
+                                    <th>Kilómetros</th>
+                                    <th>Costo</th>
+                                    <th>Comentarios</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Los datos se cargarán dinámicamente -->
+                            </tbody>
+                        </table>
+                        
+                        <div class="report-footer">
+                            <p>GarageX - Sistema de Gestión de Mantenimiento de Vehículos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/user/history.js"></script>
+</body>
+</html>

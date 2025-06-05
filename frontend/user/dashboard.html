@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarageX - Dashboard</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../../assets/images/logo-white.png" alt="GarageX Logo" class="logo">
+                <h2>GarageX</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="autos.html">
+                            <i class="fas fa-car"></i>
+                            <span>Mis Autos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mantenimientos.html">
+                            <i class="fas fa-tools"></i>
+                            <span>Mantenimientos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="historial.html">
+                            <i class="fas fa-history"></i>
+                            <span>Historial</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="alertas.html">
+                            <i class="fas fa-bell"></i>
+                            <span>Alertas</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="configuracion.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Configuración</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Modo Oscuro</span>
+                </button>
+                <a href="../auth/login.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Dashboard</h1>
+                </div>
+                
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../../assets/images/user-avatar.jpg" alt="User Avatar" class="avatar">
+                        <span class="user-name">Juan Pérez</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content">
+                <!-- Widgets -->
+                <div class="widgets-grid">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3>Autos Registrados</h3>
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="widget-body">
+                            <span class="widget-value">2</span>
+                            <a href="autos.html" class="widget-link">Ver todos</a>
+                        </div>
+                    </div>
+                    
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3>Alertas Activas</h3>
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="widget-body">
+                            <span class="widget-value warning">3</span>
+                            <a href="alertas.html" class="widget-link">Ver alertas</a>
+                        </div>
+                    </div>
+                    
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3>Próximo Mantenimiento</h3>
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="widget-body">
+                            <span class="widget-value">Cambio de aceite</span>
+                            <span class="widget-text">en 500 km</span>
+                        </div>
+                    </div>
+                    
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3>Último Servicio</h3>
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="widget-body">
+                            <span class="widget-value">15/06/2023</span>
+                            <span class="widget-text">Rotación de llantas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección de Autos -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2>Mis Autos</h2>
+                        <a href="autos.html" class="view-all">Ver todos</a>
+                    </div>
+                    
+                    <div class="cars-grid">
+                        <div class="car-card">
+                            <div class="car-image" style="background-image: url('../../assets/images/car1.jpg')"></div>
+                            <div class="car-info">
+                                <h3>Toyota Corolla</h3>
+                                <p>2020 - 25,000 km</p>
+                                <div class="car-status">
+                                    <span class="badge warning">Cambio de aceite</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="car-card">
+                            <div class="car-image" style="background-image: url('../../assets/images/car2.jpg')"></div>
+                            <div class="car-info">
+                                <h3>Honda Civic</h3>
+                                <p>2018 - 42,500 km</p>
+                                <div class="car-status">
+                                    <span class="badge danger">Afinación general</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Alertas Recientes -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2>Alertas Recientes</h2>
+                        <a href="alertas.html" class="view-all">Ver todas</a>
+                    </div>
+                    
+                    <div class="alerts-list">
+                        <div class="alert-item warning">
+                            <div class="alert-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <h3>Cambio de aceite próximo</h3>
+                                <p>Toyota Corolla - 500 km restantes</p>
+                                <span class="alert-date">Hace 2 días</span>
+                            </div>
+                        </div>
+                        
+                        <div class="alert-item danger">
+                            <div class="alert-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <h3>Afinación general requerida</h3>
+                                <p>Honda Civic - 2,500 km excedidos</p>
+                                <span class="alert-date">Hace 1 semana</span>
+                            </div>
+                        </div>
+                        
+                        <div class="alert-item info">
+                            <div class="alert-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <h3>Rotación de llantas próxima</h3>
+                                <p>Toyota Corolla - 1,200 km restantes</p>
+                                <span class="alert-date">Hace 3 días</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/user/dashboard.js"></script>
+</body>
+</html>

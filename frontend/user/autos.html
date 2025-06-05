@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarageX - Mis Autos</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (igual que en dashboard.html) -->
+        <aside class="sidebar">
+            <!-- ... mismo contenido que dashboard.html ... -->
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Mis Autos</h1>
+                </div>
+                
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../../assets/images/user-avatar.jpg" alt="User Avatar" class="avatar">
+                        <span class="user-name">Juan Pérez</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content">
+                <!-- Botón para agregar nuevo auto -->
+                <div class="section-header">
+                    <h2>Mis Autos Registrados</h2>
+                    <button id="addCarBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Agregar Auto
+                    </button>
+                </div>
+                
+                <!-- Tabla de autos -->
+                <div class="table-container">
+                    <table class="table" id="carsTable">
+                        <thead>
+                            <tr>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Año</th>
+                                <th>Kilómetros</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los datos se cargarán dinámicamente con JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para agregar/editar auto -->
+    <div class="modal" id="carModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Agregar Nuevo Auto</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="carForm">
+                    <input type="hidden" id="carId">
+                    
+                    <div class="form-group">
+                        <label for="brand">Marca</label>
+                        <input type="text" id="brand" class="form-control" required>
+                        <span class="error-message" id="brandError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="model">Modelo</label>
+                        <input type="text" id="model" class="form-control" required>
+                        <span class="error-message" id="modelError"></span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="year">Año</label>
+                            <input type="number" id="year" class="form-control" min="1900" max="2099" required>
+                            <span class="error-message" id="yearError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="kilometers">Kilómetros</label>
+                            <input type="number" id="kilometers" class="form-control" min="0" value="0">
+                            <span class="error-message" id="kilometersError"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-danger" id="cancelBtn">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="saveBtn">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/user/cars.js"></script>
+</body>
+</html>
