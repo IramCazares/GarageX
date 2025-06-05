@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch('php/api/auth.php?action=checkSession', {
             credentials: 'include' // Importante para enviar cookies
         });
-        
+
         const data = await response.json();
-        
+
         if (data.error) {
             window.location.href = 'login.html';
         } else {
@@ -31,7 +31,7 @@ document.getElementById('logoutBtn').addEventListener('click', async () => {
             }),
             credentials: 'include'
         });
-        
+
         const data = await response.json();
         if (!data.error) {
             window.location.href = 'login.html';

@@ -1,7 +1,7 @@
 // Registro de usuario
 document.getElementById('registerForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const formData = {
         username: document.getElementById('username').value,
         email: document.getElementById('email').value,
@@ -9,7 +9,7 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
         confirm_password: document.getElementById('confirm_password').value,
         action: 'register'
     };
-    
+
     try {
         const response = await fetch('php/api/auth.php', {
             method: 'POST',
@@ -18,9 +18,9 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
             },
             body: JSON.stringify(formData)
         });
-        
+
         const data = await response.json();
-        
+
         if (data.success) {
             alert(data.message);
             window.location.href = 'login.html';
@@ -36,13 +36,13 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
 // Login de usuario
 document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const formData = {
         username: document.getElementById('username').value,
         password: document.getElementById('password').value,
         action: 'login'
     };
-    
+
     try {
         const response = await fetch('php/api/auth.php', {
             method: 'POST',
@@ -51,9 +51,9 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify(formData)
         });
-        
+
         const data = await response.json();
-        
+
         if (data.success) {
             alert(data.message);
             window.location.href = data.redirect;
