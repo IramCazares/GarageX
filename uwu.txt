@@ -1,0 +1,129 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.tabSize": 2,
+  "workbench.tree.indent": 12,
+  "breadcrumbs.enabled": false,
+  "editor.fontSize": 16,
+  "terminal.integrated.fontFamily": "'Consolas'",
+  "terminal.integrated.fontSize": 18,
+  "explorer.confirmDragAndDrop": false,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "dart.debugExternalLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "discord.detailsEditing": "Developing",
+  "discord.detailsDebugging": "Debugging",
+  "discord.lowerDetailsDebugging": "Debugging:",
+  "discord.lowerDetailsEditing": "Workspace: ",
+  "discord.largeImage": "Editing a file",
+  "discord.removeRemoteRepository": true,
+  "discord.removeLowerDetails": true,
+  "discord.lowerDetailsIdling": "Jugando a ser dios en {app_name}",
+  "discord.detailsIdling": "Developing",
+  "bitoAI.codeCompletion.setAutoCompletionTriggerLogic": 250,
+  "bitoAI.codeCompletion.enableAutoCompletion": false,
+  "bitoAI.codeCompletion.enableCommentToCode": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "terminal.integrated.tabs.enabled": true,
+  "explorer.confirmDelete": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.accessibilitySupport": "off",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "dart.customDevTools": {},
+  "html.format.extraLiners": "",
+  "cmake.configureOnOpen": true,
+  "editor.codeActionsOnSave": {
+  
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.inlineSuggest.showToolbar": "always",
+  "terminal.integrated.automationProfile.linux": {},
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "debug.onTaskErrors": "abort",
+  "cmake.options.advanced": {
+    "build": {
+      "statusBarVisibility": "inherit",
+      "inheritDefault": "visible"
+    },
+    "launch": {
+      "statusBarVisibility": "inherit",
+      "inheritDefault": "visible"
+    },
+    "debug": {
+      "statusBarVisibility": "inherit",
+      "inheritDefault": "visible"
+    }
+  },
+  "C_Cpp.default.compilerPath": "c:\\msys64\\ucrt64\\bin\\g++.exe",
+  "redhat.telemetry.enabled": true,
+  "code-runner.runInTerminal": true,
+  "workbench.settings.applyToAllProfiles": [],
+  "bitoAI.appearance.fontSize (Match with IDE Font)": false,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "window.customTitleBarVisibility": "windowed",
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+  "liveServer.settings.ChromeDebuggingAttachment": false,
+  "database-client.autoSync": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "cmake.showOptionsMovedNotification": false,
+  "npm.keybindingsChangedWarningShown": true,
+  "java.showBuildStatusOnStart.enabled": "notification",
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "terminal.integrated.profiles.linux": {
+    
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  }
+}
