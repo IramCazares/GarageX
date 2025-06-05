@@ -1,0 +1,28 @@
+<header class="bg-dark text-white p-3 d-flex justify-content-between align-items-center">
+  <div>
+    <a href="#/" class="text-white me-3">Inicio</a>
+    <a href="#/dashboard" class="text-white me-3">Dashboard</a>
+    <a href="#/admin" class="text-white me-3">Admin</a>
+  </div>
+  <div>
+    <span id="usernameDisplay" class="me-3"></span>
+    <button id="logoutBtn" class="btn btn-outline-light btn-sm">Cerrar sesión</button>
+  </div>
+</header>
+
+<script>
+  const user = JSON.parse(sessionStorage.getItem('user'));
+  const usernameEl = document.getElementById('usernameDisplay');
+  const logoutBtn = document.getElementById('logoutBtn');
+
+  if (user) {
+    usernameEl.textContent = user.username || user.email;
+    logoutBtn.addEventListener('click', () => {
+      sessionStorage.removeItem('user');
+      window.location.hash = '/login';
+    });
+  } else {
+    usernameEl.textContent = '';
+    logoutBtn.style.display = 'none';
+  }
+</script>

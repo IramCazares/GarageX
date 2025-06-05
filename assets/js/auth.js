@@ -1,67 +1,78 @@
-// Registro de usuario
-document.getElementById('registerForm')?.addEventListener('submit', async (e) => {
-    e.preventDefault();
+function handleLoginForm() {
+    const form = document.getElementById('loginForm');
+    if (!form) return;
+    console.log("login form handler cargado 2")
 
-    const formData = {
-        username: document.getElementById('username').value,
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value,
-        confirm_password: document.getElementById('confirm_password').value,
-        action: 'register'
-    };
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    try {
-        const response = await fetch('php/api/auth.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
+        const formData = {
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+            action: 'login'
+        };
 
-        const data = await response.json();
+        try {
+            const response = await fetch('php/api/auth.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
 
-        if (data.success) {
-            alert(data.message);
-            window.location.href = 'login.html';
-        } else {
-            alert(data.message);
+            const data = await response.json();
+
+            if (data.success) {
+                loginUser(data.user);
+                window.location.hash = '/dashboard';
+            } else {
+                document.getElementById('mensajeError').textContent = data.message;
+                document.getElementById('mensajeError').classList.remove('d-none');
+            }
+
+        } catch (error) {
+            console.error('Error:', error);
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Error al registrar el usuario');
-    }
-});
+    });
+}
 
-// Login de usuario
-document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
-    e.preventDefault();
 
-    const formData = {
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value,
-        action: 'login'
-    };
+async function handleRegisterForm() {
+    const form = document.getElementById('registerForm');
+    if (!form) return;
 
-    try {
-        const response = await fetch('php/api/auth.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        const data = await response.json();
+        const formData = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+            confirm_password: document.getElementById('confirm_password').value,
+            action: 'register'
+        };
 
-        if (data.success) {
-            alert(data.message);
-            window.location.href = data.redirect;
-        } else {
-            alert(data.message);
+        try {
+            const response = await fetch('php/api/auth.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                console.log('Usuario registrado exitosamente');
+                window.location.hash = '/login';
+            } else {
+                document.getElementById('mensajeError').textContent = data.message;
+                document.getElementById('mensajeError').classList.remove('d-none');
+            }
+
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error al registrar el usuario');
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Error al iniciar sesión');
-    }
-});
+    });
+}

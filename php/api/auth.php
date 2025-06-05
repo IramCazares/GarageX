@@ -18,7 +18,7 @@ $input = json_decode(file_get_contents('php://input'), true);
 if (json_last_error() !== JSON_ERROR_NONE) {
     echo json_encode([
         'success' => false,
-        'message' => 'JSON inválido'
+        'message' => 'JSON inválido en la solicitud'
     ]);
     exit;
 }
@@ -87,7 +87,6 @@ try {
             ]);
             break;
         case 'register':
-    // Validar datos obligatorios
     if (empty($input['username']) || empty($input['email']) || empty($input['password']) || empty($input['confirm_password'])) {
         throw new Exception('Todos los campos son obligatorios');
     }
@@ -97,6 +96,7 @@ try {
     $email = trim(strtolower($input['email'])); // Normalizar email
     $password = $input['password'];
     $confirm_password = $input['confirm_password'];
+    $rol = $input['usuario'];
 
     // Validaciones
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -138,6 +138,7 @@ try {
         $_SESSION = [
             'usuario_id' => $usuario_id,
             'username' => $username,
+            'rol' => $rol,
             'autenticado' => true,
             'ip' => $_SERVER['REMOTE_ADDR'],
             'user_agent' => $_SERVER['HTTP_USER_AGENT'],
