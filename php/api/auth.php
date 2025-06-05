@@ -36,16 +36,16 @@ try {
     switch ($input['action']) {
         case 'login':
             // Validar datos
-            if (empty($input['username']) || empty($input['password'])) {
-                throw new Exception('Usuario y contraseña son obligatorios');
+            if (empty($input['email']) || empty($input['password'])) {
+                throw new Exception('Correo y contraseña son obligatorios');
             }
             
-            $username = $input['username'];
+            $email = $input['email'];
             $password = $input['password'];
             
             // Buscar usuario
-            $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE username = ?");
-            $stmt->execute([$username]);
+            $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
+            $stmt->execute([$email]);
             $usuario = $stmt->fetch();
             
             // Verificar credenciales
