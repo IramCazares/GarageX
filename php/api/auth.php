@@ -98,7 +98,8 @@ try {
     $email = trim(strtolower($input['email'])); // Normalizar email
     $password = $input['password'];
     $confirm_password = $input['confirm_password'];
-    $rol = $input['usuario'];
+    $rol = isset($input['usuario']) ? $input['usuario'] : 'usuario';
+
 
     // Validaciones
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
